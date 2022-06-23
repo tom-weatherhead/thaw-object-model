@@ -21,11 +21,11 @@ class LogMessageDispatcher implements ILogMessageDispatcher {
 					message: logEntry.message
 				})
 				.subscribe(
-					(result: unknown) => {
+					(result: boolean) => {
 						console.log(
-							'LogMessageDispatcher: log() succeeded:',
-							typeof result,
-							result
+							`LogMessageDispatcher: log() ${
+								result ? 'succeeded' : 'failed'
+							}.`
 						);
 					},
 					(error: unknown) => {
